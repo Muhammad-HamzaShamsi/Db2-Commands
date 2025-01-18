@@ -1,0 +1,142 @@
+Beginner-Level Commands:
+------------------------
+
+1. Connect to a Database:
+   CONNECT TO <database_name> USER <username> USING <password>;
+   - Establishes a connection to a specified database.
+
+2. Create a Database:
+   CREATE DATABASE <database_name>;
+   - Creates a new database in the Db2 instance.
+
+3. Drop a Database:
+   DROP DATABASE <database_name>;
+   - Deletes the database and all associated objects permanently.
+
+4. List Databases:
+   LIST DATABASE DIRECTORY;
+   - Displays all databases available in the instance.
+
+5. List Tables:
+   LIST TABLES FOR SCHEMA <schema_name>;
+   - Displays all tables in the specified schema.
+
+6. Create a Table:
+   CREATE TABLE <table_name> (
+     column1 datatype,
+     column2 datatype,
+     ...
+   );
+   - Creates a new table with specified columns and data types.
+
+7. Insert Data:
+   INSERT INTO <table_name> (column1, column2, ...) VALUES (value1, value2, ...);
+   - Inserts a row of data into the specified table.
+
+8. Query Data:
+   SELECT * FROM <table_name>;
+   - Retrieves all rows from the specified table.
+
+9. Update Data:
+   UPDATE <table_name> SET column1 = value1 WHERE condition;
+   - Updates data in a table based on a condition.
+
+10. Delete Data:
+    DELETE FROM <table_name> WHERE condition;
+    - Deletes data from a table based on a condition.
+
+Intermediate-Level Commands:
+----------------------------
+
+1. Alter a Table:
+   ALTER TABLE <table_name> ADD COLUMN <column_name> datatype;
+   - Adds a new column to an existing table.
+
+2. Drop a Table:
+   DROP TABLE <table_name>;
+   - Deletes a table and its data.
+
+3. Create an Index:
+   CREATE INDEX <index_name> ON <table_name> (column1, column2, ...);
+   - Improves query performance by creating an index.
+
+4. Drop an Index:
+   DROP INDEX <index_name>;
+   - Removes an index.
+
+5. Grant Privileges:
+   GRANT SELECT, INSERT ON <table_name> TO <username>;
+   - Assigns specific privileges on a table to a user.
+
+6. Revoke Privileges:
+   REVOKE SELECT, INSERT ON <table_name> FROM <username>;
+   - Revokes previously granted privileges from a user.
+
+Advanced-Level Commands:
+------------------------
+
+1. Backup Database:
+   BACKUP DATABASE <database_name> TO <directory>;
+   - Creates a backup of the database.
+
+2. Restore Database:
+   RESTORE DATABASE <database_name> FROM <directory>;
+   - Restores the database from a backup.
+
+3. Create a View:
+   CREATE VIEW <view_name> AS SELECT column1, column2 FROM <table_name> WHERE condition;
+   - Creates a virtual table based on the result of a SELECT query.
+
+4. Drop a View:
+   DROP VIEW <view_name>;
+   - Deletes a view.
+
+5. Runstat Command:
+   RUNSTATS ON TABLE <table_name> WITH DISTRIBUTION;
+   - Updates statistics for query optimization.
+
+6. Reorganize Table:
+   REORG TABLE <table_name>;
+   - Reorganizes data in a table for better performance.
+
+7. Configure Database Parameters:
+   UPDATE DATABASE CONFIGURATION FOR <database_name> USING <parameter_name> <value>;
+   - Updates specific database configuration parameters.
+
+8. Export Data:
+   EXPORT TO <file_name> OF DEL SELECT * FROM <table_name>;
+   - Exports data from a table to a file.
+
+9. Import Data:
+   IMPORT FROM <file_name> OF DEL INSERT INTO <table_name>;
+   - Imports data from a file into a table.
+
+10. Load Data:
+    LOAD FROM <file_name> OF DEL INSERT INTO <table_name>;
+    - Loads large volumes of data into a table.
+
+11. Monitor Performance:
+    LIST APPLICATIONS;
+    - Displays information about applications connected to the database.
+
+12. Terminate Applications:
+    FORCE APPLICATIONS ALL;
+    - Forces all applications to disconnect from the database.
+
+13. Explain Plan:
+    EXPLAIN PLAN FOR SELECT * FROM <table_name>;
+    - Displays the query execution plan to analyze performance.
+
+14. Set Isolation Level:
+    SET CURRENT ISOLATION <isolation_level>;
+    - Sets the transaction isolation level (e.g., UR, CS, RS, RR).
+
+15. Enable Logging:
+    UPDATE DATABASE CONFIGURATION USING LOGARCHMETH1 "LOGRETAIN";
+    - Enables archival logging for the database.
+
+16. Perform Rollforward:
+    ROLLFORWARD DATABASE <database_name> TO END OF LOGS;
+    - Recovers the database using transaction logs.
+
+These commands provide a comprehensive set of operations for working with Db2, from basic database management to advanced performance tuning and recovery.
